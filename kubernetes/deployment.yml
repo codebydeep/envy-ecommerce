@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+
+metadata:
+  name: app-deployment
+  namespace: app-namespace
+  labels:
+    app: react-app
+
+spec:
+  replicas: 5
+  selector:
+    matchLabels:
+      app: react-app
+
+  template:
+    metadata:
+      name: app-pod
+      namespace: app-namespace
+      labels:
+        app: react-app
+
+    spec:
+      containers:
+        - name: react-frontend
+          image: 3453458134/react-app
+          ports:
+            - containerPort: 3000

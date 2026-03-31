@@ -1,0 +1,13 @@
+kind: Pod
+apiVersion: v1
+
+metadata:
+  name: app-pod
+  namespace: app-namespace
+
+spec:
+  containers:
+    - name: react-frontend
+      image: 3453458134/react-app
+      ports:
+        - containerPort: 3000
